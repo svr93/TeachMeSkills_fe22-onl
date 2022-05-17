@@ -1,0 +1,20 @@
+.header{
+	padding: 30px;
+	display: flex;
+}
+.headerIsOpen{
+	background-color: rgb(87, 169, 231);;
+}
+.links{
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+a{
+	display: block;
+	margin-right: 30px;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+}

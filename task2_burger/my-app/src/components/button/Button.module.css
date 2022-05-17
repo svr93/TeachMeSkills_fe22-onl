@@ -1,0 +1,14 @@
+.button {
+	color: rgb(87, 169, 231);
+	background-color: rgb(255, 255, 255);
+	font-weight: bold;
+	border: none;
+	padding: 10px;
+	font-size: 20px;
+}
+.button:disabled {
+	background-color: rgb(237, 101, 169);
+}
+.button:hover{
+	background-color: rgb(196, 200, 240);
+}
