@@ -1,0 +1,31 @@
+.wrapper{
+	padding: 50px 0;
+	background-image:url(./img/bg.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+.header{
+	padding: 0 70px;
+margin-bottom: 20px;
+}
+.container{
+	padding: 0 70px;
+	max-width: 600px;
+}
+h1{
+	font-weight: bold;
+	font-size: 30px;
+	color: rgb(77, 78, 78);
+margin-bottom: 50px;
+}
+h1 span{
+	color:rgb(174, 210, 232);
+}
+p{
+	font-size: 20px;
+	margin-bottom: 40px;
+	color: rgb(77, 78, 78);
+
+}

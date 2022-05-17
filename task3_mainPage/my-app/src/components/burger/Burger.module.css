@@ -1,0 +1,24 @@
+.burger{
+	border: none;
+	background-color: transparent;
+	margin-bottom: 60px;
+	padding: 5px;
+	height: 40px;
+	width: 40px;
+	display: grid;
+	place-content: center;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.burger svg{
+	width: 90%;
+	height: 90%;
+}
+.burger path{
+	fill: rgb(255, 255, 255);
+}
+.burger:hover path{
+	fill: rgb(196, 200, 240);
+}
