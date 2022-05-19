@@ -21,3 +21,6 @@
 .burger:hover{
 	background-color: rgb(196, 200, 240);
 }
+.removed{
+	display: none;
+}
