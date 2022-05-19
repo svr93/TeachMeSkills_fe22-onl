@@ -40,16 +40,10 @@ strUser
 
 //2222222222222
 
-let getOwnerCars = users.filter(function(item){
-return item.cars;
-})
-let arrOwnerCars = getOwnerCars.map(function(item){
-return item.cars;
-})
-let stringOwnerCars  = arrOwnerCars.join(', ');
-
-let summCars = stringOwnerCars.split(',');
-console.log(`Количесвто авто: ${summCars.length}`)
+let getOwner = users.filter(item => item.cars);
+let arrOwnersCars = getOwner.map(item => item.cars);
+let showCars = arrOwnersCars.flat();
+console.log(showCars.length)
 
 //333333333333333333
 
@@ -68,10 +62,12 @@ getAnimals(users);
 //555555555555555555
 
 function getStrCar(arr){
-let getOwnersCar = arr.filter(item => item.cars);
-let arrOwenrsCar = getOwnersCar.map(item => item.cars).join(',');    
-return arrOwenrsCar;
+    let getOwnersCar = arr.filter(item => item.cars);    
+    let arrOwnerCars = getOwnersCar.map(item => item.cars).flat();
+    let strCars = arrOwnerCars.join(', ');
+    return strCars;
 }
-getStrCar(users)
+
+getStrCar(users);
 
 
