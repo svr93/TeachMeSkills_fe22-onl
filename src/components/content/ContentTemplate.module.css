@@ -1,0 +1,19 @@
+.list{
+	padding: 30px;
+	
+}
+.contentTitle{
+	text-align: left;
+	padding-left: 30px;
+	margin-right: 10px;
+	max-width: 300px;
+	width: 100%;
+}
+.block{
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+}
+.contentButton{
+	width: 100px;
+}

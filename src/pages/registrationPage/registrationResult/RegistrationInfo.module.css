@@ -1,0 +1,25 @@
+.title{
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	margin-bottom: 50px;
+}
+
+	.registrButton{
+	margin-bottom: 40px;
+	max-width: 250px;
+	width: 100%;
+	}
+	.desc{
+		max-width: 400px;
+		margin: 0 auto 40px;
+	}
+	.text{
+		color: var(--secondary-text-color);
+		margin-right: 5px;
+	}
+	.link{
+		display: inline;
+		color: var(--primary-text-color);
+		margin-right: 5px;
+	}

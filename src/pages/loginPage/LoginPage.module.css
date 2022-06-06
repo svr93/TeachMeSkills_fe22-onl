@@ -1,0 +1,40 @@
+.login, .slash{
+	color: var(--primary-text-color);
+	margin-right: 5px;
+}
+.registration{
+	color: var(--secondary-text-color);
+   margin-right: 0;
+}
+.title{
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	margin-bottom: 50px;
+}
+.form{
+	display: flex;
+	flex-direction: column;
+	max-width: 350px;
+	margin: 0 auto;
+	align-items: center;
+	margin-bottom: 30px;
+	}
+	.formButton{
+	margin-bottom: 40px;
+	max-width: 250px;
+	width: 100%;
+	}
+	.desc{
+		display: flex;
+		justify-content: center;
+	}
+	.text{
+		color: var(--secondary-text-color);
+		margin-right: 5px;
+	}
+	.link{
+		color: var(--primary-text-color);
+		font-weight: bold;
+		margin-right: 0;
+	}
