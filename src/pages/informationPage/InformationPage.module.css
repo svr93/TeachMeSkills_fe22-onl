@@ -1,0 +1,12 @@
+.buttonBlock{
+	text-align: left;
+}
+.buttonBlock .tabButton + .tabButton{
+	margin-left: 20px;
+}
+.tabButton{
+	width: 80px;
+}
+.tabButton:hover{
+	opacity: 0.8;
+}

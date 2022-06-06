@@ -1,6 +1,6 @@
 export enum AppPages {
 	EMAIL_CONFIRMATION = "/email-confirmation",
-	//INFORMATION = "/information",
+	INFORMATION = "/information",
 	LOGIN = "/login",
 	POSTS = "/posts",
 	REGISTRATION = "/registration",

@@ -9,6 +9,7 @@ import React from "react";
 import { AppContext } from "./AppContext";
 import { Route, Routes } from "react-router-dom";
 import { AppPages } from "./types";
+import { InformationPage } from "./pages/informationPage/InformationPage";
 
 function App() {
   const appRef = React.createRef<HTMLDivElement>();
@@ -20,6 +21,10 @@ function App() {
             <Route
               path={AppPages.EMAIL_CONFIRMATION}
               element={<RegistrationConfirm></RegistrationConfirm>}
+            ></Route>
+				   <Route
+              path={AppPages.INFORMATION}
+              element={<InformationPage></InformationPage>}
             ></Route>
             <Route
               path={AppPages.LOGIN}
