@@ -14,9 +14,11 @@ type CardListProps = {
     author?: number;
   }>;
   onPreviewClick?:(id: string | number)=> void;
+  LikeDislike?: React.ComponentType<{ id: string | number }>;
+
 };
 
-export const CardList: React.FC<CardListProps> = ({ data, onPreviewClick }) => {
+export const CardList: React.FC<CardListProps> = ({ data, onPreviewClick, LikeDislike }) => {
   return (
     <ul className={styles.list}>
       {data.map((card) => {
@@ -30,6 +32,7 @@ export const CardList: React.FC<CardListProps> = ({ data, onPreviewClick }) => {
               date={card.date}
               titleCard={card.titleCard}
 				  onPreviewClick={onPreviewClick}
+				  LikeDislike={LikeDislike}
             ></Card>
           </li></Link>
         );

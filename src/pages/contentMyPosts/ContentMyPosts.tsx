@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { ContentTemplate } from "../../components/content/ContentTemplate";
 import { Header } from "../../features/header/Header";
-import { CardList } from "../../ui/cardList/CardList";
 import { UserButton } from "../../ui/userButton/UserButton";
 import { UserIcon } from "../../ui/userIcon/UserIcon";
-import data from "./data.json";
 import { setSelectedPost } from "../../features/posts/selectedPostSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import styles from "./ContentMyPosts.module.css";
 import { Card } from "../../ui/card/Card";
+import { PostsCardList } from "../../features/posts/card-list/CardList";
+import data from "./data.json"
 
 export const ContentMyPosts: React.FC = () => {
   const [cardList, setCardList] = useState<typeof data | null>(null);
@@ -37,10 +37,9 @@ export const ContentMyPosts: React.FC = () => {
       </Header>
 
       <ContentTemplate title="My Posts" button="+ Add">
-        <CardList
-          data={cardList ?? []}
+        <PostsCardList
           onPreviewClick={(id) => dispatch(setSelectedPost(id))}
-        ></CardList>
+        ></PostsCardList>
       </ContentTemplate>
     </div>
   );

@@ -1,3 +1,4 @@
+import { LikeDislike } from "../../features/posts/like-dislike/ui/like-dislike/LikeDislike";
 import { Button } from "../button/Button";
 import styles from "./Card.module.css";
 type CardProps = {
@@ -10,6 +11,7 @@ type CardProps = {
   titleCard: string;
   author?: number;
   onPreviewClick?: (id: string | number) => void;
+  LikeDislike?: React.ComponentType<{ id: string | number }>;
 };
 
 export const Card: React.FC<CardProps> = ({
@@ -20,19 +22,30 @@ export const Card: React.FC<CardProps> = ({
   titleCard,
   className = "",
   onPreviewClick,
+  LikeDislike,
 }) => {
   return (
     <article className={`${styles.article} ${className}`} id={`${id}`}>
-	   <div className={styles.img}>
+      <div className={styles.img}>
         <img src={image} alt="" />
       </div>
       <h3 className={styles.titleCard}>{titleCard}</h3>
       <p className={styles.text}>{text}</p>
-      <p className={styles.date}>{date}</p>
-      <Button className={styles.previewButton}
+      <div className={styles.flexBlock}>
+        <p className={styles.date}>{date}</p>
+        {/*<LikeDislike
+          onLikeClick={() => null}
+          onDislikeClick={() => null}
+          currentState={null}
+          count={-39}
+  ></LikeDislike>*/}
+        {LikeDislike ? <LikeDislike id={id} /> : null}
+      </div>
+      <Button
+        className={styles.previewButton}
         onClick={(event) => {
           onPreviewClick?.(id);
-			 event.preventDefault()
+          event.preventDefault();
         }}
       >
         Предпросмотр

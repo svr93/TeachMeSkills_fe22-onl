@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "text": "lorem jbjbbjjvkjb bjbbkjbkb",
+    "date": "20-05-2022",
+    "titleCard": "What is Lorem ipsum?"
+  },
+  {
+    "id": 2,
+    "text": "bjbbkjbkblorem jbjbbjjvkjb bjbbkjbkb",
+    "date": "20-05-2022",
+    "titleCard": "What is Lorem?",
+    "image": "https://www.ixbt.com/img/n1/news/2021/10/2/22459ff25f8eff76bddf34124cc2c85b16f4cd4a_large.jpg"
+  },
+  {
+    "id": 3,
+    "text": "bjbbkjbkblorem jbjbbjjvkjb bjbbkjbkb",
+    "date": "20-05-2022",
+    "titleCard": "What is Lorem?",
+    "image": "https://www.imgonline.com.ua/examples/bee-on-daisy.jpg"
+  },
+  {
+    "id": 4,
+    "text": "bjbbkjbkblorem jbjbbjjvkjb bjbbkjbkb",
+    "date": "20-05-2022",
+    "titleCard": "What is Lorem?"
+  },
+  {
+    "id": 5,
+    "text": "bjbbkjbkblorem jbjbbjjvkjb bjbbkjbkb",
+    "date": "20-05-2022",
+    "titleCard": "What is Lorem?",
+    "image": "https://www.imgonline.com.ua/examples/bee-on-daisy.jpg"
+  }
+]

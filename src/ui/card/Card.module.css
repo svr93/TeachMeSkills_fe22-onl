@@ -53,3 +53,7 @@ display: block;
 .previewButton{
 	margin-top: auto;
 }
+.flexBlock{
+	display: flex;
+	justify-content: space-between;
+}
