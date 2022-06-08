@@ -1,4 +1,3 @@
-import { LikeDislike } from "../../features/posts/like-dislike/ui/like-dislike/LikeDislike";
 import { Button } from "../button/Button";
 import styles from "./Card.module.css";
 type CardProps = {
