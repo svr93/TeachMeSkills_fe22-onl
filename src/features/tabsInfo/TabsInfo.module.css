@@ -10,3 +10,9 @@
 .tabButton:hover{
 	opacity: 0.8;
 }
+.removed{
+	display: none;
+}
+.showm{
+	display: block;
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardList } from "../../../ui/cardList/CardList";
-import { PostsLikeDislike } from "../like-dislike";
+import { PostsLikeDislike } from "../like-dislike/posts-like-dislike";
 import data from "./data.json";
 
 type PostsCardListProps = {

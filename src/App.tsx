@@ -25,7 +25,7 @@ function App() {
 				   <Route
               path={AppPages.INFORMATION}
               element={<InformationPage></InformationPage>}
-            ></Route>
+  ></Route>
             <Route
               path={AppPages.LOGIN}
               element={<LoginPage></LoginPage>}
