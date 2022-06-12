@@ -16,3 +16,11 @@
 .showm{
 	display: block;
 }
+.tabInfo{
+	max-width: 500px;
+	width: 100%;
+}
+.showm{
+	max-width: 500px;
+	width: 100%;
+}

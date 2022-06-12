@@ -1,4 +1,5 @@
 import { Button } from "../button/Button";
+import { CloseIcon } from "../closeIcon/CloseIcon";
 import styles from "./Card.module.css";
 type CardProps = {
   className?: string;
@@ -9,6 +10,7 @@ type CardProps = {
   lesson_num?: number;
   titleCard: string;
   author?: number;
+  closeIcon?: React.ReactNode;
   onPreviewClick?: (id: string | number) => void;
   LikeDislike?: React.ComponentType<{ id: string | number }>;
 };
@@ -20,6 +22,7 @@ export const Card: React.FC<CardProps> = ({
   date,
   titleCard,
   className = "",
+  closeIcon,
   onPreviewClick,
   LikeDislike,
 }) => {
@@ -28,16 +31,12 @@ export const Card: React.FC<CardProps> = ({
       <div className={styles.img}>
         <img src={image} alt="" />
       </div>
+	<CloseIcon currentState={"opened"} onClick={()=>null}></CloseIcon>
       <h3 className={styles.titleCard}>{titleCard}</h3>
       <p className={styles.text}>{text}</p>
       <div className={styles.flexBlock}>
         <p className={styles.date}>{date}</p>
-        {/*<LikeDislike
-          onLikeClick={() => null}
-          onDislikeClick={() => null}
-          currentState={null}
-          count={-39}
-  ></LikeDislike>*/}
+       
         {LikeDislike ? <LikeDislike id={id} /> : null}
       </div>
       <Button
