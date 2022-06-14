@@ -7,8 +7,10 @@ const selectedPostSlice = createSlice({
     setSelectedPost(state, action: { payload: string | number }) {
       state.id = action.payload;
     },
+	 closeSelectedPost(state, action: { payload: string | number }) {
+      state.id = action.payload;
   },
-});
+},});
 
-export const { setSelectedPost } = selectedPostSlice.actions;
+export const { setSelectedPost, closeSelectedPost } = selectedPostSlice.actions;
 export default selectedPostSlice.reducer;

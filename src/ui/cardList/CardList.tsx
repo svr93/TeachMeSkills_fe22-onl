@@ -13,28 +13,36 @@ type CardListProps = {
     titleCard: string;
     author?: number;
   }>;
-  onPreviewClick?:(id: string | number)=> void;
-  LikeDislike?: React.ComponentType<{ id: string | number }>;
+  onPreviewClick?: (id: string | number) => void;
+  onCloseClick?: (id: string | number) => void;
 
+  LikeDislike?: React.ComponentType<{ id: string | number }>;
 };
 
-export const CardList: React.FC<CardListProps> = ({ data, onPreviewClick, LikeDislike }) => {
+export const CardList: React.FC<CardListProps> = ({
+  data,
+  onPreviewClick,
+  onCloseClick,
+  LikeDislike,
+}) => {
   return (
     <ul className={styles.list}>
       {data.map((card) => {
         return (
-			  <Link to={`${AppPages.POSTS}/${card.id}`}>
-          <li className={styles.listItem} key={card.id}>
-            <Card
-              id={card.id}
-              image={card.image}
-              text={card.text}
-              date={card.date}
-              titleCard={card.titleCard}
-				  onPreviewClick={onPreviewClick}
-				  LikeDislike={LikeDislike}
-            ></Card>
-          </li></Link>
+          <Link to={`${AppPages.POSTS}/${card.id}`}>
+            <li className={styles.listItem} key={card.id}>
+              <Card
+                id={card.id}
+                image={card.image}
+                text={card.text}
+                date={card.date}
+                titleCard={card.titleCard}
+                onPreviewClick={onPreviewClick}
+                onCloseClick={onCloseClick}
+                LikeDislike={LikeDislike}
+              ></Card>
+            </li>
+          </Link>
         );
       })}
     </ul>

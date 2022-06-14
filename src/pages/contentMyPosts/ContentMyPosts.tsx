@@ -3,7 +3,7 @@ import { ContentTemplate } from "../../components/content/ContentTemplate";
 import { Header } from "../../features/header/Header";
 import { UserButton } from "../../ui/userButton/UserButton";
 import { UserIcon } from "../../ui/userIcon/UserIcon";
-import { setSelectedPost } from "../../features/posts/selectedPostSlice";
+import { setSelectedPost, closeSelectedPost } from "../../features/posts/selectedPostSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import styles from "./ContentMyPosts.module.css";
 import { Card } from "../../ui/card/Card";
@@ -12,17 +12,20 @@ import data from "./data.json"
 
 export const ContentMyPosts: React.FC = () => {
   const [cardList, setCardList] = useState<typeof data | null>(null);
+ 
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null
       ? cardList?.find((item) => item.id === selectedPostId)
       : null;
   const dispatch = useAppDispatch();
+ 
   useEffect(() => {
     setTimeout(() => {
       setCardList(data);
     }, 1000);
   }, []);
+  
   return (
     <div>
       {selectedPostId != null ? (
@@ -39,7 +42,7 @@ export const ContentMyPosts: React.FC = () => {
       <ContentTemplate title="My Posts" button="+ Add">
         <PostsCardList
           onPreviewClick={(id) => dispatch(setSelectedPost(id))}
-        ></PostsCardList>
+          onCloseClick={(id)=>dispatch(closeSelectedPost(id))}></PostsCardList>
       </ContentTemplate>
     </div>
   );

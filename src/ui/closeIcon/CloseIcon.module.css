@@ -1,5 +1,16 @@
-.closeIcon {
-	position: absolute;
-	top:0;
-	left: 20px;
+
+.button{
+border: none;
+background-color: transparent;
+position: absolute;
+top: -10px;
+right: -50px;
+cursor: pointer;
+color: var(--primary-text-color);
+height: 40px;
+width: 40px;
+}
+.button svg{
+	width: 90%;
+	height: 90%;
 }

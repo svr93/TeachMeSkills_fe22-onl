@@ -22,10 +22,10 @@ function App() {
               path={AppPages.EMAIL_CONFIRMATION}
               element={<RegistrationConfirm></RegistrationConfirm>}
             ></Route>
-				   <Route
+            <Route
               path={AppPages.INFORMATION}
               element={<InformationPage></InformationPage>}
-  ></Route>
+            ></Route>
             <Route
               path={AppPages.LOGIN}
               element={<LoginPage></LoginPage>}
