@@ -9,13 +9,17 @@ import { PasswordInput } from "../../ui/inputs/PasswordInput";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppPages } from "../../types";
+import { useAppDispatch } from "../../hooks";
+import { register } from "../../features/auth/authSlice";
 
 export const RegistrationPage: React.FC = () => {
-  const [nameValue, setNameValue] = useState("");
-  const [emailValue, setEmailValue] = useState("test@test.com");
-  const [passValue, setPassValue] = useState("");
+  const [username, setNameValue] = useState("");
+  const [email, setEmailValue] = useState("test@test.com");
+  const [password, setPassValue] = useState("");
   const [confValue, setConfValue] = useState("");
   const navigate = useNavigate();
+
+  const dispatch = useAppDispatch();
   return (
     <div>
       <Header></Header>
@@ -26,18 +30,8 @@ export const RegistrationPage: React.FC = () => {
               Login
             </Link>
             <span className={styles.slash}> | </span>
-            <span className={styles.registration}>
-              Registration
-            </span>
+            <span className={styles.registration}>Registration</span>
           </Title>
-        }
-        button={
-          <Button
-            className={styles.formButton}
-            onClick={() => navigate(AppPages.SUCCESS_PAGE)}
-          >
-            Registration
-          </Button>
         }
         description={
           <div className={styles.desc}>
@@ -48,20 +42,26 @@ export const RegistrationPage: React.FC = () => {
           </div>
         }
       >
-        <form className={styles.form}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            dispatch(register({ username, email, password }));
+          }}
+          className={styles.form}
+        >
           <TextInput
             label="User name"
-            value={nameValue}
+            value={username}
             onChange={(event) => setNameValue(event.target.value)}
           ></TextInput>
           <EmailInput
             label="Email"
-            value={emailValue}
+            value={email}
             onChange={(event) => setEmailValue(event.target.value)}
           ></EmailInput>
           <PasswordInput
             label="Password"
-            value={passValue}
+            value={password}
             onChange={(event) => setPassValue(event.target.value)}
           ></PasswordInput>
           <PasswordInput
@@ -69,6 +69,14 @@ export const RegistrationPage: React.FC = () => {
             value={confValue}
             onChange={(event) => setConfValue(event.target.value)}
           ></PasswordInput>
+
+          <Button
+            type="submit"
+            className={styles.formButton}
+            onClick={() => navigate(AppPages.SUCCESS_PAGE)}
+          >
+            Registration
+          </Button>
         </form>
       </WelcomeTemplate>
     </div>

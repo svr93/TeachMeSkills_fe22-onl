@@ -3,16 +3,14 @@ import styles from "./CloseIcon.module.css";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 type CloseIconProps = {
-  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  currentState: "opened" | "closed" | null;
+  onCloseClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 export const CloseIcon: React.FC<CloseIconProps> = ({
-  onClick,
-  currentState,
+	onCloseClick,
 }) => {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={styles.button} onClick={onCloseClick}>
       <FontAwesomeIcon icon={faTimes} role="button" />
     </button>
   );

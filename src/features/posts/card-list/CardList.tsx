@@ -5,11 +5,10 @@ import data from "./data.json";
 
 type PostsCardListProps = {
   onPreviewClick?: (id: string | number) => void;
-  onCloseClick?: (id: string | number) => void;
 
 };
 export const PostsCardList: React.FC<PostsCardListProps> = ({
-  onPreviewClick, onCloseClick,
+  onPreviewClick, 
 }) => {
   const [cardList, setCardList] = useState<typeof data | null>(null);
   useEffect(() => {
@@ -22,7 +21,6 @@ export const PostsCardList: React.FC<PostsCardListProps> = ({
     <CardList
       data={cardList ?? []}
       onPreviewClick={onPreviewClick}
-		onCloseClick={onCloseClick}
       LikeDislike={PostsLikeDislike}
     ></CardList>
   );

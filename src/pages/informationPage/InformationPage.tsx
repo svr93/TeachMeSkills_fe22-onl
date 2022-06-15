@@ -8,11 +8,7 @@ import { Button } from "../../ui/button/Button";
 import { useState } from "react";
 
 export const InformationPage: React.FC = () => {
-  const [isTab1Shown, setIsTab1Shown] = useState(true);
-  const [isTab2Shown, setIsTab2Shown] = useState(false);
-  const [isTab3Shown, setIsTab3Shown] = useState(false);
-{/*const selectedData = isTab2Shown? {data[2].text} : {data[1].text}; 
-isTab3Shown? {data[3].text} : {data[1].text}*/}
+	const [activeTabId, setActiveTabId] = useState(null)
   return (
     <div>
       <Header>

@@ -14,7 +14,6 @@ type CardListProps = {
     author?: number;
   }>;
   onPreviewClick?: (id: string | number) => void;
-  onCloseClick?: (id: string | number) => void;
 
   LikeDislike?: React.ComponentType<{ id: string | number }>;
 };
@@ -22,7 +21,6 @@ type CardListProps = {
 export const CardList: React.FC<CardListProps> = ({
   data,
   onPreviewClick,
-  onCloseClick,
   LikeDislike,
 }) => {
   return (
@@ -38,7 +36,6 @@ export const CardList: React.FC<CardListProps> = ({
                 date={card.date}
                 titleCard={card.titleCard}
                 onPreviewClick={onPreviewClick}
-                onCloseClick={onCloseClick}
                 LikeDislike={LikeDislike}
               ></Card>
             </li>

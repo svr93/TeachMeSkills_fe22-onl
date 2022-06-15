@@ -3,35 +3,48 @@ import { ContentTemplate } from "../../components/content/ContentTemplate";
 import { Header } from "../../features/header/Header";
 import { UserButton } from "../../ui/userButton/UserButton";
 import { UserIcon } from "../../ui/userIcon/UserIcon";
-import { setSelectedPost, closeSelectedPost } from "../../features/posts/selectedPostSlice";
+import {
+  setSelectedPost,
+  closeSelectedPost,
+} from "../../features/posts/selectedPostSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import styles from "./ContentMyPosts.module.css";
 import { Card } from "../../ui/card/Card";
 import { PostsCardList } from "../../features/posts/card-list/CardList";
-import data from "./data.json"
+import data from "./data.json";
+import { CloseIcon } from "../../ui/closeIcon/CloseIcon";
 
 export const ContentMyPosts: React.FC = () => {
   const [cardList, setCardList] = useState<typeof data | null>(null);
- 
+
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null
       ? cardList?.find((item) => item.id === selectedPostId)
       : null;
   const dispatch = useAppDispatch();
- 
+
+  const onCloseClick = () => selectedPostId === null;
+
   useEffect(() => {
     setTimeout(() => {
       setCardList(data);
     }, 1000);
   }, []);
-  
+
   return (
     <div>
       {selectedPostId != null ? (
         <div className={styles.overlayContainer}>
           <div className={styles.overlay}>
-            {selectedPost ? <Card {...selectedPost} text="" className={styles.overlayCard}></Card> : null}
+            <CloseIcon onCloseClick={() => onCloseClick()}></CloseIcon>
+            {selectedPost ? (
+              <Card
+                {...selectedPost}
+                text=""
+                className={styles.overlayCard}
+              ></Card>
+            ) : null}
           </div>
         </div>
       ) : null}
@@ -42,7 +55,7 @@ export const ContentMyPosts: React.FC = () => {
       <ContentTemplate title="My Posts" button="+ Add">
         <PostsCardList
           onPreviewClick={(id) => dispatch(setSelectedPost(id))}
-          onCloseClick={(id)=>dispatch(closeSelectedPost(id))}></PostsCardList>
+        ></PostsCardList>
       </ContentTemplate>
     </div>
   );
