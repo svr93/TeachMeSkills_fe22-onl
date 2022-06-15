@@ -8,7 +8,7 @@ import { Button } from "../../ui/button/Button";
 import { useState } from "react";
 
 export const InformationPage: React.FC = () => {
-	const [activeTabId, setActiveTabId] = useState(null)
+	const [activeTabId, setActiveTabId] = useState("") //null выдаёт ошибки
   return (
     <div>
       <Header>
@@ -18,28 +18,28 @@ export const InformationPage: React.FC = () => {
       <ContentTemplate title="Information">
         <div className={styles.buttonBlock}>
           <Button
-            onClick={() => setIsTab1Shown(isTab1Shown)}
+            onClick={() => setActiveTabId("1")}
             className={styles.tabButton}
             id="1"
           >
             Tab 1
           </Button>
           <Button
-            onClick={() => setIsTab2Shown(!isTab2Shown)}
+            onClick={() => setActiveTabId("2")}
             className={styles.tabButton}
             id="2"
           >
             Tab 2
           </Button>
           <Button
-            onClick={() => setIsTab3Shown(!isTab3Shown)}
+            onClick={() => setActiveTabId("3")}
             className={styles.tabButton}
             id="3"
           >
             Tab 3
           </Button>
         </div>
-        <TabsInfo data="123"></TabsInfo>
+        <TabsInfo id={activeTabId}></TabsInfo>
       </ContentTemplate>
     </div>
   );

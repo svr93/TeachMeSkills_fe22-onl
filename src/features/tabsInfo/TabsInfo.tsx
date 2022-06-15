@@ -2,13 +2,11 @@ import { Button } from "../../ui/button/Button";
 import styles from "./TabsInfo.module.css";
 
 type TabsInfoProp = {
-  data: Array<{
-    id: string | number;
-    text: string;
-  }>;
+
+  id: string | number| null;
 };
-export const TabsInfo: React.FC<TabsInfoProp> = ({ data }) => {
-  data = [
+export const TabsInfo: React.FC<TabsInfoProp> = ({ id }) => {
+  const data = [
     {
       id: 1,
       text: "In the spring, seeds take root and vegetation begins to grow. The weather is warmer and often wetter. Animals wake or return from warmer climates, often with newborns. Melting snow from the previous season, along with increased rainfall, can cause flooding along waterways, according to the Federal Emergency Management Agency(opens in new tab) (FEMA).",
@@ -27,7 +25,7 @@ export const TabsInfo: React.FC<TabsInfoProp> = ({ data }) => {
 
   return result ? (
     <div>
-      <p className={styles.tabInfo} id={result.id} text={result.text}></p>
+      <p className={styles.tabInfo} id={`${result.id}`}>{result.text}</p>
     </div>
   ) : null;
 };
