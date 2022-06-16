@@ -6,4 +6,5 @@ export enum AppPages {
 	REGISTRATION = "/registration",
 	//RESET_PASSWORD = "/reset-password",
 	SUCCESS_PAGE = "/success-page",
+	ACTIVATE = "/activate",
 }

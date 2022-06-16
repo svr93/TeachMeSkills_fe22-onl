@@ -13,9 +13,9 @@ import { useAppDispatch } from "../../hooks";
 import { register } from "../../features/auth/authSlice";
 
 export const RegistrationPage: React.FC = () => {
-  const [username, setNameValue] = useState("");
-  const [email, setEmailValue] = useState("test@test.com");
-  const [password, setPassValue] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("test@test.com");
+  const [password, setPassword] = useState("");
   const [confValue, setConfValue] = useState("");
   const navigate = useNavigate();
 
@@ -52,17 +52,17 @@ export const RegistrationPage: React.FC = () => {
           <TextInput
             label="User name"
             value={username}
-            onChange={(event) => setNameValue(event.target.value)}
+            onChange={(event) => setUsername(event.target.value)}
           ></TextInput>
           <EmailInput
             label="Email"
             value={email}
-            onChange={(event) => setEmailValue(event.target.value)}
+            onChange={(event) => setEmail(event.target.value)}
           ></EmailInput>
           <PasswordInput
             label="Password"
             value={password}
-            onChange={(event) => setPassValue(event.target.value)}
+            onChange={(event) => setPassword(event.target.value)}
           ></PasswordInput>
           <PasswordInput
             label="Confirm password"

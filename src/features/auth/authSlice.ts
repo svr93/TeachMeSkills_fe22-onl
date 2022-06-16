@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RegisterPayload, RegisterResponse } from "./types";
+import { ActivatePayload, RegisterPayload, RegisterResponse } from "./types";
 
 const authSlice = createSlice({
   name: "auth",
@@ -10,8 +10,11 @@ const authSlice = createSlice({
     registerFailure(state, action: { payload: string }) {
       console.error("RegisterFailure", action.payload);
     },
+    activate(state, action: { payload: ActivatePayload }) {},
+    activateSuccess() {},
+    activateFailure() {},
   },
 });
 
-export const { register, registerSuccess, registerFailure } = authSlice.actions;
+export const { register, registerSuccess, registerFailure, activate, activateSuccess,activateFailure } = authSlice.actions;
 export default authSlice.reducer;

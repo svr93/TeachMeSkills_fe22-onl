@@ -10,3 +10,8 @@ export type RegisterResponse = {
   username: string;
   id: number;
 };
+
+export type ActivatePayload = {
+	uid: string;
+	token: string;
+}
