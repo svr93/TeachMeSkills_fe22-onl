@@ -8,32 +8,25 @@ import { PasswordInput } from "../../ui/inputs/PasswordInput";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AppPages } from "../../types";
+import { useAppDispatch } from "../../hooks";
+import { login } from "../../features/auth/authSlice";
 
 export const LoginPage: React.FC = () => {
   const [emailValue, setEmailValue] = useState("test@test.com");
   const [passValue, setPassValue] = useState("");
-
+  const dispatch = useAppDispatch();
   return (
     <div>
       <Header></Header>
       <WelcomeTemplate
         title={
           <Title className={styles.title}>
-            <span className={styles.login}>
-              Login
-            </span>
+            <span className={styles.login}>Login</span>
             <span className={styles.slash}> | </span>
             <Link className={styles.registration} to={AppPages.REGISTRATION}>
               Registration
             </Link>
           </Title>
-        }
-        button={
-          <Link to={AppPages.POSTS}>
-            <Button className={styles.formButton} role="presentation">
-              Login
-            </Button>
-          </Link>
         }
         description={
           <div className={styles.desc}>
@@ -44,7 +37,13 @@ export const LoginPage: React.FC = () => {
           </div>
         }
       >
-        <form className={styles.form}>
+        <form
+          className={styles.form}
+          onSubmit={(e) => {
+            e.preventDefault();
+            dispatch(login({ email: emailValue, password: passValue }));
+          }}
+        >
           <EmailInput
             label="Email"
             value={emailValue}
@@ -55,6 +54,10 @@ export const LoginPage: React.FC = () => {
             value={passValue}
             onChange={(event) => setPassValue(event.target.value)}
           ></PasswordInput>
+
+          <Button type="submit" className={styles.formButton}>
+            Login
+          </Button>
         </form>
       </WelcomeTemplate>
     </div>

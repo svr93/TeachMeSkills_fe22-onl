@@ -1,6 +1,6 @@
-import { activateSaga, registerSaga } from "./authSagas";
+import { activateSaga, loginSaga, loginSuccessSaga, registerSaga } from "./authSagas";
 
 export function* authSagas(){
-	yield ([registerSaga(), activateSaga()]);
+	yield ([registerSaga(), activateSaga(), loginSuccessSaga(), loginSaga()]);
 
 }

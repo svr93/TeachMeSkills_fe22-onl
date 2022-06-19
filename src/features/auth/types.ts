@@ -1,7 +1,6 @@
 export type RegisterPayload = {
   username: string;
   email: string;
-
   password: string;
 };
 
@@ -12,6 +11,12 @@ export type RegisterResponse = {
 };
 
 export type ActivatePayload = {
-	uid: string;
-	token: string;
-}
+  uid: string;
+  token: string;
+};
+
+export type LoginPayload = Omit<RegisterPayload, "username">;
+export type LoginResponse = {
+  access: string;
+  refresh: string;
+};

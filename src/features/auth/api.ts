@@ -1,6 +1,5 @@
-import { rejects } from "assert";
-import { resolve } from "path";
-import { ActivatePayload, RegisterPayload, RegisterResponse } from "./types";
+
+import { ActivatePayload, LoginPayload, LoginResponse, RegisterPayload, RegisterResponse } from "./types";
 export namespace AuthApi {
   export async function register(
     payload: RegisterPayload
@@ -61,4 +60,28 @@ export namespace AuthApi {
       throw e;
     }
   }
+
+
+  export async function login(
+	payload:LoginPayload
+ ): Promise<LoginResponse> {
+	try {
+	  const result = await fetch(
+		 "https://studapi.teachmeskills.by/auth/jwt/create/",
+		 {
+			method: "POST",
+			body: JSON.stringify(payload),
+			headers: { "content-type": "application/json" },
+		 }
+	  );
+	  if (!result.ok) {
+		 const errorText = await result.text();
+		 throw new Error(errorText);
+	  }
+	  return result.json();
+	} catch (e) {
+	  console.error(e);
+	  throw e;
+	}
+ }
 }

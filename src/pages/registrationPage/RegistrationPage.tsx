@@ -45,7 +45,7 @@ export const RegistrationPage: React.FC = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            dispatch(register({ username, email, password }));
+            dispatch(register({ username:username, email:email, password:password }));
           }}
           className={styles.form}
         >

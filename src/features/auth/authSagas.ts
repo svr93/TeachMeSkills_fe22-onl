@@ -7,6 +7,9 @@ import {
   register,
   registerFailure,
   registerSuccess,
+  login,
+  loginSuccess,
+  loginFailure,
 } from "./authSlice";
 
 export function* registerSaga() {
@@ -37,5 +40,34 @@ export function* activateSaga() {
     } catch (e) {
       yield* put(activateFailure());
     }
+  });
+}
+export function* loginSaga() {
+	yield takeLatest(login, function* (action) {
+		try {
+		  const result = yield* call(AuthApi.login, action.payload);
+		  console.log(result);
+  
+		  yield* put(loginSuccess(result));
+		} catch (e) {
+		  if (e instanceof Error) {
+			 yield* put(loginFailure(e.message));
+		  }
+		}
+		console.log(action);
+	 });
+ }
+export function* loginSuccessSaga() {
+  yield takeLatest(loginSuccess, function* (action) {
+    yield* call(
+      [localStorage, "setItem"],
+      "access-token",
+      action.payload.access
+    );
+	 yield* call(
+      [localStorage, "setItem"],
+      "refresh-token",
+      action.payload.refresh
+    );
   });
 }
