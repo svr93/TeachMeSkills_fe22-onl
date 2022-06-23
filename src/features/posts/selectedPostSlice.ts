@@ -4,7 +4,7 @@ const selectedPostSlice = createSlice({
   name: "selectedPost",
   initialState: { id: null } as { id: string | null | number },
   reducers: {
-    setSelectedPost(state, action: { payload: string | number }) {
+    setSelectedPost(state, action: { payload: string | number |null }) {
       state.id = action.payload;
     },
 	 closeSelectedPost(state, action: { payload: string | number }) {

@@ -24,7 +24,7 @@ export const ContentMyPosts: React.FC = () => {
       : null;
   const dispatch = useAppDispatch();
 
-  const onCloseClick = () => selectedPostId === null;
+  const onCloseClick = () => dispatch(setSelectedPost(null));
 
   useEffect(() => {
     setTimeout(() => {

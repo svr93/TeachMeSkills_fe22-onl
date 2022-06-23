@@ -1,6 +1,7 @@
-import { activateSaga, loginSaga, loginSuccessSaga, registerSaga } from "./authSagas";
+import { all } from "redux-saga/effects";
+import { activateSaga, loginSaga, loginSuccessSaga, refreshSaga, refreshSuccessSaga, registerSaga } from "./authSagas";
 
 export function* authSagas(){
-	yield ([registerSaga(), activateSaga(), loginSuccessSaga(), loginSaga()]);
+	yield all([registerSaga(), activateSaga(), loginSuccessSaga(), loginSaga(), refreshSaga(),refreshSuccessSaga()]);
 
 }

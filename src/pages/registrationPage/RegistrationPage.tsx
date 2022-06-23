@@ -44,8 +44,10 @@ export const RegistrationPage: React.FC = () => {
       >
         <form
           onSubmit={(e) => {
+				console.log("onSubmit")
             e.preventDefault();
             dispatch(register({ username:username, email:email, password:password }));
+				
           }}
           className={styles.form}
         >
@@ -73,7 +75,6 @@ export const RegistrationPage: React.FC = () => {
           <Button
             type="submit"
             className={styles.formButton}
-            onClick={() => navigate(AppPages.SUCCESS_PAGE)}
           >
             Registration
           </Button>
