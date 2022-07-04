@@ -2,7 +2,7 @@ export type SearchResponse = {
   count: number;
   next: string;
   previous: string;
-  results: {};
+  results: [];
 };
 export type SearchPayload = {
 	text:string
