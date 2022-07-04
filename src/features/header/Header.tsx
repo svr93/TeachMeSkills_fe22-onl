@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../AppContext";
 import { Link } from "react-router-dom";
 import { AppPages } from "../../types";
+import { SearchBar } from "../search/search-bar/SearchBar";
 
 type HeaderProps = {
   children?: React.ReactNode;
@@ -17,7 +18,9 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
     <div className={styles.container}>
       <div className={isShown ? `${styles.removed}` : `${styles.header}`}>
         <Burger onClick={() => setIsShown(!isShown)}></Burger>
-        <div>{children}</div>
+        <div className={styles.container}>{children}
+		  <SearchBar></SearchBar>
+		  </div>
       </div>
       <div
         className={

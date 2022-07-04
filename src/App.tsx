@@ -11,6 +11,7 @@ import { Route, Routes } from "react-router-dom";
 import { AppPages } from "./types";
 import { InformationPage } from "./pages/informationPage/InformationPage";
 import { Activate } from "./pages/activatePage/ActivatePage";
+import { AddPostPage } from "./pages/addPostPage/AddPostPage";
 
 function App() {
   const appRef = React.createRef<HTMLDivElement>();
@@ -19,7 +20,12 @@ function App() {
       <div className="App" ref={appRef}>
         <AppContext.Provider value={appRef}>
           <Routes>
-			 <Route
+            <Route
+              path={AppPages.ADDPOST}
+              element={<AddPostPage></AddPostPage>}
+            ></Route>
+
+            <Route
               path={`${AppPages.ACTIVATE}/:uid/:token`}
               element={<Activate></Activate>}
             ></Route>

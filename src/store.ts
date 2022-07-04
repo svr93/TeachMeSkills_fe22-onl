@@ -3,8 +3,11 @@ import selectedPostReducer from "./features/posts/selectedPostSlice";
 import likeDislikeReducer from "./features/posts/like-dislike/likeDislikeSlice";
 import createSagaMiddleware from "redux-saga";
 import { rootSaga } from "./sagas";
-import authReducer from "./features/auth/authSlice"
-import userReducer from "./features/user/userSlice"
+import authReducer from "./features/auth/authSlice";
+import userReducer from "./features/user/userSlice";
+import searchReducer from "./features/search";
+import addPostReducer from "./features/posts/add-post";
+
 
 let sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
@@ -13,8 +16,10 @@ export const store = configureStore({
   reducer: {
     selectedPost: selectedPostReducer,
     likeDislike: likeDislikeReducer,
-	 auth: authReducer,
-	 user: userReducer,
+    auth: authReducer,
+    user: userReducer,
+    search: searchReducer,
+	 addPost: addPostReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),
