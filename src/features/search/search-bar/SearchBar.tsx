@@ -11,10 +11,10 @@ export const SearchBar: React.FC<SearchBarProps> = () => {
   const dispatch = useAppDispatch();
   const list = useAppSelector((state) => state.search.response?.results ?? []);
   return (
-    <div>
-      <FontAwesomeIcon icon={faMagnifyingGlass} />
+    <div className={styles.searchContainer}>
+      <FontAwesomeIcon  className={styles.searchIcon} icon={faMagnifyingGlass} />
       <div>
-        <input
+        <input className={styles.searchInput}
           type="text"
           onInput={(e) => {
             dispatch(actions.search({ text: e.currentTarget.value }));

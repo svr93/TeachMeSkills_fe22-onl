@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppPages } from "../../types";
 import { useAppDispatch } from "../../hooks";
-import { register } from "../../features/auth/authSlice";
+import { register } from "../../features/auth";
 
 export const RegistrationPage: React.FC = () => {
   const [username, setUsername] = useState("");

@@ -9,7 +9,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AppPages } from "../../types";
 import { useAppDispatch } from "../../hooks";
-import { login } from "../../features/auth/authSlice";
+import { login } from "../../features/auth";
 
 export const LoginPage: React.FC = () => {
   const [emailValue, setEmailValue] = useState("test@test.com");

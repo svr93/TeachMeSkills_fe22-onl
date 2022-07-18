@@ -3,7 +3,7 @@ import selectedPostReducer from "./features/posts/selectedPostSlice";
 import likeDislikeReducer from "./features/posts/like-dislike/likeDislikeSlice";
 import createSagaMiddleware from "redux-saga";
 import { rootSaga } from "./sagas";
-import authReducer from "./features/auth/authSlice";
+import {authReducer} from "./features/auth";
 import userReducer from "./features/user/userSlice";
 import searchReducer from "./features/search";
 import addPostReducer from "./features/posts/add-post";

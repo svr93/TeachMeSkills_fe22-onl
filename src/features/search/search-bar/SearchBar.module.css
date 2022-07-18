@@ -6,3 +6,28 @@
 .dropdownContainer > *{
 	position: absolute;
 }
+.searchInput{
+	border-radius: 20px;
+	height: 30px;
+	border-color: var(--blue-backgraund-color);
+	width: 250px;
+	padding: 0 10px;
+	margin-left: 10px;
+}
+.searchInput:focus{
+	opacity: 0.8;
+	outline: none;
+}
+.searchContainer{
+	display: flex;
+	align-items: center;
+	margin-left: 200px;
+}
+.searchIcon path{
+	fill: var(--blue-backgraund-color);
+}
+.searchIcon:hover{
+	cursor: pointer;
+	opacity: 0.8;
+
+}
