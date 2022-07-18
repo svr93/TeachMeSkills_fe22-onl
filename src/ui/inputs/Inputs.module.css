@@ -1,0 +1,17 @@
+.label{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 25px;
+	color: var(--secondary-text-color);
+	font-weight: bold;
+	text-align: left;
+max-width: 250px;
+width: 100%;
+}
+.input{
+	margin-top: 5px;
+	border: 2px solid var(--blue-backgraund-color);
+	border-radius: 20px;
+	outline: none;
+	padding: 7px 10px;
+}

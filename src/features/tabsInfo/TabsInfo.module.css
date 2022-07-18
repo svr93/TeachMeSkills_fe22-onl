@@ -1,0 +1,26 @@
+.buttonBlock{
+	text-align: left;
+}
+.buttonBlock .tabButton + .tabButton{
+	margin-left: 20px;
+}
+.tabButton{
+	width: 80px;
+}
+.tabButton:hover{
+	opacity: 0.8;
+}
+.removed{
+	display: none;
+}
+.showm{
+	display: block;
+}
+.tabInfo{
+	max-width: 500px;
+	width: 100%;
+}
+.showm{
+	max-width: 500px;
+	width: 100%;
+}

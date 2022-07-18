@@ -1,0 +1,19 @@
+.overlayContainer{
+position: relative;
+height: 0;
+width: 100%;
+}
+.overlay{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	background-color: rgba(0,0,0,0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.overlayCard{
+	width: 70%;
+	height: 80%;
+}

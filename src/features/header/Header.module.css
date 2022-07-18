@@ -1,0 +1,34 @@
+.container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header{
+	width: 100%;
+	padding: 30px;
+	display: flex;
+}
+.headerIsOpen{
+	background-color: var(--blue-backgraund-color);
+}
+.links{
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.link{
+	display: block;
+	margin-right: 30px;
+	color: white;
+	cursor: pointer;
+}
+.removed{
+	display: none;
+}
+.switchLabel{
+	padding: 20px;
+}
+.switchInput{
+	margin-right: 5px;
+}

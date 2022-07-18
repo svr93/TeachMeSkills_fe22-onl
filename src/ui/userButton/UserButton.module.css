@@ -1,0 +1,16 @@
+.button {
+	color: var(--primary-text-color);
+	background-color: transparent;
+	font-weight: bold;
+	border: none;
+	padding: 10px;
+	font-size: 20px;
+	cursor: pointer;
+
+}
+.button:disabled {
+	background-color: rgb(237, 101, 169);
+}
+.button:hover{
+	background-color: rgb(196, 200, 240);
+}
