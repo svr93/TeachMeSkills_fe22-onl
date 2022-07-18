@@ -7,7 +7,7 @@ export namespace UserApi {
   }): Promise<UserResponse> {
     try {
       const result = await fetch(`${baseUrl}auth/users/me/`, {
-        method: "GE",
+        method: "GET",
         headers: { authorisation: `Bearer ${params.accessToken}` },
       });
       if (!result.ok) {
